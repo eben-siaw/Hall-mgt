@@ -35,4 +35,5 @@ window.onscroll = function(){
     scroll1 = scroll2;
 
 }
-// jquery
+// jquery 
+
