@@ -37,3 +37,33 @@ window.onscroll = function(){
 }
 // jquery 
 
+
+// function for table search 
+function search() { 
+	var filter, tr, table, td, i, txtValue; 
+	// get table id  
+	table = document.getElementById('mytable')
+
+	// get input id
+	input = document.getElementById('myInput')
+
+	tr = table.getElementsByTagName('tr')
+  
+	// filter based on the value of the search input
+	filter = input.value.toUpperCase();
+
+
+   // loop through the rows
+	for(i = 0; i < tr.length; i++) { 
+		td = tr[i].getElementsByTagName('td')[0];
+		if (td) {
+			txtValue = td.textContent || td.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			  tr[i].style.display = "";
+			} else {
+			  tr[i].style.display = "none";
+			}
+		  }
+	}
+}
+
